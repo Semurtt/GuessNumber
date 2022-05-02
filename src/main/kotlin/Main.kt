@@ -1,7 +1,7 @@
 import kotlin.random.Random
 
 fun main() {
-    var again = false
+    var again: Boolean
     var game = 0
     do {
         game++
