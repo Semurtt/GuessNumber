@@ -12,7 +12,7 @@ fun main() {
         println("4 - сложно: загаданное число от 1 до 500")
         println("5 - очень сложно: загаданное число от 1 до 1000")
         println("6 - ваш выбор - вы сами указываете до какого числа загадывать")
-        val choice = when (readLine()?.toIntOrNull() ?: continue) {
+        val choice = when (readLine()?.toIntOrNull() ?: 100) {
             1 -> 10
             2 -> 50
             3 -> 100
@@ -20,11 +20,11 @@ fun main() {
             5 -> 1000
             6 -> {
                 println("Введите до какого числа загадываем")
-                readLine()?.toIntOrNull() ?: return
+                readLine()?.toIntOrNull() ?: 100
             }
             else -> {
                 println("Что то не то ввели")
-                return
+                100
             }
         }
         val number = Random.nextInt(1, choice + 1)
@@ -43,7 +43,7 @@ fun main() {
         println("Играем еще раз?")
         println("1 - Да")
         println("2 - Нет")
-        again = when (readLine()?.toIntOrNull() ?: return) {
+        again = when (readLine()?.toIntOrNull() ?: false) {
             1 -> true
             else -> false
         }
